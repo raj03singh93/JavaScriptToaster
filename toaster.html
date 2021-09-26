@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="toaster.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    
+    <button style="font-size:24px" class="alert">Success</button>
+    <button style="font-size:24px" class="alert">Warning</button>
+    <button style="font-size:24px" class="alert">Error</button>
+        
+    <script src="toaster.js"></script>
+    <script>
+        let btns = document.querySelectorAll(".alert");
+        btns.forEach(function(btn){
+            btn.addEventListener("click",function(){
+                
+                let value = this.innerText;
+                Toaster.notify(value,"Successfully saved to DB")
+            })
+        });
+    </script>
+</body>
+</html>
